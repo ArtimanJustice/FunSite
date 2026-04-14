@@ -43,19 +43,24 @@
 
     <section id="about">
         <div class="hero-content">
-            <img src="images/rc-vanity-fair-2024.jpg" alt="Sydney Sweeney" class="hero-img" id="main-photo">
+            <img src="images/rc-vanity-fair-2024.jpg"
+                 alt="Sydney Sweeney — Vanity Fair Oscar Party 2024"
+                 class="hero-img"
+                 id="main-photo"
+                 style="box-shadow: 10px 10px 0 #c4687a;">
             <div class="hero-text">
                 <h2>Про актрису</h2>
                 <p>Сідні Бернадет Суіні — американська актриса, народжена <strong>12 вересня 1997 року</strong> в Спокані, штат Вашингтон. Вона здобула широку популярність завдяки ролі Кессі Говард у серіалі <em>«Єфорія»</em> на HBO та Олівії Мосбахер у серіалі <em>«Білий лотос»</em>.</p>
                 <p>Суіні є однією з найбільш затребуваних молодих акторок Голлівуду. Вона також відома як продюсер та підприємець — у 2020 році вона заснувала власну продюсерську компанію <strong>Fifty-Fifty Films</strong>.</p>
-                <p>Завдяки своїй різноплановій акторській майстерності вона неодноразово отримувала номінації на премію «Еммі», SAG Awards та інші престижні нагороди.</p>
-                <div>
+                <p>Завдяки своїй різноплановій акторській майстерності вона неодноразово отримувала номінації на премію <em>«Еммі»</em>, SAG Awards та інші престижні нагороди індустрії.</p>
+                <div style="margin-top: 1rem;">
                     <span class="tag">Актриса</span>
                     <span class="tag">Продюсер</span>
                     <span class="tag">Підприємець</span>
                     <span class="tag">Пілот</span>
                 </div>
                 <a href="#facts" class="btn">Детальніше ↓</a>
+                <a href="career.html" class="btn" style="margin-left: .75rem; background: transparent; border: 2px solid #c4687a; color: #c4687a;">Кар'єра →</a>
             </div>
         </div>
     </section>
@@ -104,6 +109,76 @@
             </ul>
             <div class="quote-block">«Я хочу довести, що красива жінка може бути і розумною, і успішною одночасно.»</div>
         </div>
+    </section>
+
+    <div class="bg-banner" style="background-image: url('images/promo-miu-miu.jpg');">
+        <div class="bg-banner-overlay">
+            <blockquote>«Я хочу контролювати свою кар'єру і знімати фільми, які мають значення.»</blockquote>
+            <cite>— Sydney Sweeney</cite>
+        </div>
+    </div>
+
+    <section id="video" class="video-section">
+        <h3>Відео</h3>
+        <p>Фрагмент з кар'єри та проєктів Сідні Суіні.</p>
+        <div class="video-wrap">
+            <div class="video-label"><span>▶</span> Відео</div>
+            <video controls width="100%">
+                <source src="videos/base.mp4" type="video/mp4">
+                Ваш браузер не підтримує відтворення відео.
+            </video>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h3>Написати нам</h3>
+        <article>
+            <p>Маєш питання або хочеш поділитись думками про сайт? Заповни форму нижче.</p>
+            <form action="#" method="post" style="margin-top: 1.5rem;">
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="f-name">Ім'я *</label>
+                        <input type="text" id="f-name" name="name" required placeholder="Ваше ім'я" minlength="2" maxlength="50">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="f-email">Email *</label>
+                        <input type="email" id="f-email" name="email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="f-tel">Телефон</label>
+                        <input type="tel" id="f-tel" name="phone" placeholder="+380XXXXXXXXX" pattern="[+][0-9]{10,13}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="f-url">Ваш сайт</label>
+                        <input type="url" id="f-url" name="website" placeholder="https://example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="f-date">Дата відвідування</label>
+                        <input type="datetime-local" id="f-date" name="visit_date" min="2024-01-01T00:00" max="2026-12-31T23:59">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="f-age">Вік</label>
+                        <input type="number" id="f-age" name="age" placeholder="18" min="10" max="100" step="1">
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="f-msg">Повідомлення *</label>
+                        <textarea id="f-msg" name="message" required maxlength="500" placeholder="Ваше повідомлення (до 500 символів)..."></textarea>
+                    </div>
+
+                    <div class="form-group full" style="margin-top: .5rem;">
+                        <button type="submit" class="btn">Надіслати повідомлення</button>
+                    </div>
+
+                </div>
+            </form>
+        </article>
     </section>
 
 </main>
