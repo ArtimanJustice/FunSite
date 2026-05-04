@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кар'єра — Sydney Sweeney Fan Site</title>
+    <title>Головна — Sydney Sweeney Fan Site</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,20 +11,26 @@
 <header>
     <div>
         <h1>Sydney Sweeney</h1>
-        <p class="header-subtitle">Official Fan Site</p>
+        <p class="header__subtitle">Official Fan Site</p>
     </div>
     <nav>
-        <ul class="nav-list">
-            <li><a href="index.html" class="active">Головна</a></li>
-            <li class="dropdown">
-                <a href="career.html">Кар'єра ▾</a>
-                <ul class="dropdown-menu">
+        <input type="checkbox" id="nav-toggle" class="nav__toggle">
+        <label for="nav-toggle" class="nav__burger" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </label>
+        <ul class="nav__list">
+            <li class="nav__item"><a href="index.html" class="nav__link nav__link--active">Головна</a></li>
+            <li class="nav__item nav__item--dropdown">
+                <a href="career.html" class="nav__link">Кар'єра ▾</a>
+                <ul class="nav__dropdown">
                     <li><a href="career.html#filmography">Фільмографія</a></li>
                     <li><a href="career.html#awards">Нагороди</a></li>
                     <li><a href="career.html#roles">Найзначніші ролі</a></li>
                 </ul>
             </li>
-            <li><a href="gallery.html">Галерея</a></li>
+            <li class="nav__item"><a href="gallery.html" class="nav__link">Галерея</a></li>
+            <li class="nav__item"><a href="layout.html" class="nav__link">Хронологія</a></li>
+            <li class="nav__item"><a href="extras.html" class="nav__link">Цікаве</a></li>
         </ul>
     </nav>
 </header>
@@ -32,13 +38,13 @@
 <main>
 
     <section id="about">
-        <div class="hero-content">
+        <div class="hero__content">
             <img src="images/rc-vanity-fair-2024.jpg"
                  alt="Sydney Sweeney"
-                 class="hero-img"
+                 class="hero__img"
                  id="main-photo"
                  style="box-shadow: 10px 10px 0 #c4687a;">
-            <div class="hero-text">
+            <div class="hero__text">
                 <h2>Про актрису</h2>
                 <p>Сідні Бернадет Суіні — американська актриса, народжена <strong>12 вересня 1997 року</strong> в Спокані, штат Вашингтон. Вона здобула широку популярність завдяки ролі Кессі Говард у серіалі <em>«Єфорія»</em> на HBO та Олівії Мосбахер у серіалі <em>«Білий лотос»</em>.</p>
                 <p>Суіні є однією з найбільш затребуваних молодих акторок Голлівуду. Вона також відома як продюсер та підприємець — у 2020 році вона заснувала власну продюсерську компанію <strong>Fifty-Fifty Films</strong>.</p>
@@ -50,19 +56,16 @@
                     <span class="tag">Пілот</span>
                 </div>
                 <a href="#facts" class="btn">Детальніше ↓</a>
-                <a href="career.html" class="btn" style="margin-left: .75rem; background: transparent; border: 2px solid #c4687a; color: #c4687a;">Кар'єра →</a>
+                <a href="career.html" class="btn btn--outline">Кар'єра →</a>
             </div>
         </div>
     </section>
 
-    <section id="facts" class="facts-section">
+    <section id="facts" class="facts">
         <h3>Швидкі факти</h3>
-        <table class="info-table">
+        <table class="facts__table">
             <thead>
-                <tr>
-                    <th>Параметр</th>
-                    <th>Інформація</th>
-                </tr>
+                <tr><th>Параметр</th><th>Інформація</th></tr>
             </thead>
             <tbody>
                 <tr><td>Повне ім'я</td><td>Sydney Bernadette Sweeney</td></tr>
@@ -78,14 +81,14 @@
         </table>
     </section>
 
-    <section id="interests" class="interests-section">
-        <aside class="sidebar">
+    <section id="interests" class="interests">
+        <aside class="interests__sidebar">
             <h5>Цікаво знати</h5>
             <p>Сідні має <strong>ліцензію приватного пілота</strong> і керує власним літаком.</p>
             <p>Вона захоплюється <strong>автоперегонами</strong> та відвідує заходи NASCAR.</p>
             <p>Також вона практикує <strong>бокс</strong> і є відданою фанаткою спорту.</p>
         </aside>
-        <div class="interests-content">
+        <div class="interests__content">
             <h4>Захоплення та інтереси</h4>
             <h6>Поза знімальним майданчиком</h6>
             <p>Сідні Суіні — не просто акторка. Вона активно розвивається в різних сферах:</p>
@@ -97,22 +100,39 @@
                 <li>Кіновиробництво та продюсування</li>
                 <li>Підприємництво та бізнес</li>
             </ul>
-            <div class="quote-block">«Я хочу довести, що красива жінка може бути і розумною, і успішною одночасно.»</div>
+            <div class="quote">«Я хочу довести, що красива жінка може бути і розумною, і успішною одночасно.»</div>
         </div>
     </section>
 
-    <div class="bg-banner" style="background-image: url('images/promo-miu-miu.jpg');">
-        <div class="bg-banner-overlay">
+    <div class="banner" style="background-image: url('images/promo-miu-miu.jpg');">
+        <div class="banner__overlay">
             <blockquote>«Я хочу контролювати свою кар'єру і знімати фільми, які мають значення.»</blockquote>
             <cite>— Sydney Sweeney</cite>
         </div>
     </div>
 
-    <section id="video" class="video-section">
+    <section id="watchlist">
+        <h3>Твій список перегляду</h3>
+        <article>
+            <p>Відзнач фільми та серіали Sydney, які ти вже переглянув — або додай до плану:</p>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: .3rem 2rem; margin-top:1rem;">
+                <label class="checkbox"><input type="checkbox" class="checkbox__input" checked><span class="checkbox__box"></span><span class="checkbox__text">Euphoria (HBO, 2019–2022)</span></label>
+                <label class="checkbox"><input type="checkbox" class="checkbox__input"><span class="checkbox__box"></span><span class="checkbox__text">Immaculate (2024)</span></label>
+                <label class="checkbox"><input type="checkbox" class="checkbox__input" checked><span class="checkbox__box"></span><span class="checkbox__text">The White Lotus (HBO, 2021)</span></label>
+                <label class="checkbox"><input type="checkbox" class="checkbox__input"><span class="checkbox__box"></span><span class="checkbox__text">Madame Web (2024)</span></label>
+                <label class="checkbox"><input type="checkbox" class="checkbox__input"><span class="checkbox__box"></span><span class="checkbox__text">Anyone But You (2024)</span></label>
+                <label class="checkbox"><input type="checkbox" class="checkbox__input"><span class="checkbox__box"></span><span class="checkbox__text">Reality (2023)</span></label>
+                <label class="checkbox"><input type="checkbox" class="checkbox__input"><span class="checkbox__box"></span><span class="checkbox__text">The Voyeurs (2021)</span></label>
+                <label class="checkbox"><input type="checkbox" class="checkbox__input"><span class="checkbox__box"></span><span class="checkbox__text">Sharp Objects (HBO, 2018)</span></label>
+            </div>
+        </article>
+    </section>
+
+    <section id="video" class="video">
         <h3>Відео</h3>
         <p>Фрагмент з кар'єри та проєктів Сідні Суіні.</p>
-        <div class="video-wrap">
-            <div class="video-label">▶ Відео</div>
+        <div class="video__wrap">
+            <div class="video__label">▶ Відео</div>
             <video controls width="100%">
                 <source src="videos/base.mp4" type="video/mp4">
                 Ваш браузер не підтримує відтворення відео.
@@ -125,36 +145,36 @@
         <article>
             <p>Маєш питання або хочеш поділитись думками про сайт? Заповни форму нижче.</p>
             <form action="#" method="post" style="margin-top: 1.5rem;">
-                <div class="form-grid">
-                    <div class="form-group">
+                <div class="contact__grid">
+                    <div class="contact__group">
                         <label for="f-name">Ім'я *</label>
                         <input type="text" id="f-name" name="name" required placeholder="Ваше ім'я" minlength="2" maxlength="50">
                     </div>
-                    <div class="form-group">
+                    <div class="contact__group">
                         <label for="f-email">Email *</label>
                         <input type="email" id="f-email" name="email" required placeholder="your@email.com">
                     </div>
-                    <div class="form-group">
+                    <div class="contact__group">
                         <label for="f-tel">Телефон</label>
                         <input type="tel" id="f-tel" name="phone" placeholder="+380XXXXXXXXX" pattern="[+][0-9]{10,13}">
                     </div>
-                    <div class="form-group">
+                    <div class="contact__group">
                         <label for="f-url">Ваш сайт</label>
                         <input type="url" id="f-url" name="website" placeholder="https://example.com">
                     </div>
-                    <div class="form-group">
+                    <div class="contact__group">
                         <label for="f-date">Дата відвідування</label>
                         <input type="datetime-local" id="f-date" name="visit_date" min="2024-01-01T00:00" max="2026-12-31T23:59">
                     </div>
-                    <div class="form-group">
+                    <div class="contact__group">
                         <label for="f-age">Вік</label>
                         <input type="number" id="f-age" name="age" placeholder="18" min="10" max="100" step="1">
                     </div>
-                    <div class="form-group full">
+                    <div class="contact__group contact__group--full">
                         <label for="f-msg">Повідомлення *</label>
                         <textarea id="f-msg" name="message" required maxlength="500" placeholder="Ваше повідомлення (до 500 символів)..."></textarea>
                     </div>
-                    <div class="form-group full">
+                    <div class="contact__group contact__group--full">
                         <button type="submit" class="btn">Надіслати повідомлення</button>
                     </div>
                 </div>
@@ -167,6 +187,9 @@
 <footer>
     <p>Sydney Sweeney Fan Site</p>
 </footer>
+
+<!-- Блок 2, Завдання 3: fixed-елемент з деформацією при hover -->
+<div class="fixed-badge" title="До гори сторінки" onclick="window.scrollTo({top:0,behavior:'smooth'})">✦</div>
 
 </body>
 </html>

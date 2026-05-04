@@ -3,150 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кар'єра — Sydney Sweeney Fan Site</title>
+    <title>Галерея — Sydney Sweeney Fan Site</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="lightbox" onclick="closeLightbox()">
-    <button class="lb-close" onclick="closeLightbox()">&times;</button>
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lightbox__close" onclick="closeLightbox()">&times;</button>
     <img id="lb-img" src="" alt="">
-    <p class="lb-caption" id="lb-caption"></p>
-    <span class="lb-hint">ESC або клік для закриття</span>
+    <p class="lightbox__caption" id="lb-caption"></p>
+    <span class="lightbox__hint">ESC або клік для закриття</span>
 </div>
 
 <header>
     <div>
         <h1>Sydney Sweeney</h1>
-        <p class="header-subtitle">Official Fan Site</p>
+        <p class="header__subtitle">Official Fan Site</p>
     </div>
     <nav>
-        <ul class="nav-list">
-            <li><a href="index.html">Головна</a></li>
-            <li class="dropdown">
-                <a href="career.html">Кар'єра ▾</a>
-                <ul class="dropdown-menu">
+        <input type="checkbox" id="nav-toggle" class="nav__toggle">
+        <label for="nav-toggle" class="nav__burger" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </label>
+        <ul class="nav__list">
+            <li class="nav__item"><a href="index.html" class="nav__link">Головна</a></li>
+            <li class="nav__item nav__item--dropdown">
+                <a href="career.html" class="nav__link">Кар'єра ▾</a>
+                <ul class="nav__dropdown">
                     <li><a href="career.html#filmography">Фільмографія</a></li>
                     <li><a href="career.html#awards">Нагороди</a></li>
                     <li><a href="career.html#roles">Найзначніші ролі</a></li>
                 </ul>
             </li>
-            <li><a href="gallery.html" class="active">Галерея</a></li>
+            <li class="nav__item"><a href="gallery.html" class="nav__link nav__link--active">Галерея</a></li>
+            <li class="nav__item"><a href="layout.html" class="nav__link">Хронологія</a></li>
+            <li class="nav__item"><a href="extras.html" class="nav__link">Цікаве</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
 
-    <div class="gallery-intro">
+    <nav aria-label="Хлібні крихти">
+        <ol class="breadcrumbs">
+            <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">Головна</a></li>
+            <li class="breadcrumbs__item breadcrumbs__item--current" aria-current="page">Галерея</li>
+        </ol>
+    </nav>
+
+    <div class="gallery__intro">
         <h2>Галерея</h2>
         <p>Наведіть мишею на фото, щоб побачити підпис. Клікніть для перегляду у повному розмірі.</p>
     </div>
 
     <div class="gallery-section">
-        <div class="gallery-section-title">Червона доріжка</div>
-        <div class="gallery-grid">
-            <div class="gallery-item featured">
+        <div class="gallery-section__title">Червона доріжка</div>
+        <div class="gallery-section__grid">
+            <div class="gallery-section__item gallery-section__item--featured">
                 <img src="images/rc-vanity-fair-2024.jpg" alt="Vanity Fair Oscar Party 2024">
-                <div class="caption">Vanity Fair Oscar Party, 2024</div>
+                <div class="gallery-section__caption">Vanity Fair Oscar Party, 2024</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-section__item">
                 <img src="images/rc-emmy-2022.jpg" alt="Emmy Awards 2022">
-                <div class="caption">Primetime Emmy Awards, 2022</div>
+                <div class="gallery-section__caption">Primetime Emmy Awards, 2022</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-section__item">
                 <img src="images/rc-sag-2022.jpg" alt="SAG Awards 2022">
-                <div class="caption">SAG Awards, 2022</div>
+                <div class="gallery-section__caption">SAG Awards, 2022</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-section__item">
                 <img src="images/rc-met-gala-2023.jpg" alt="Met Gala 2023">
-                <div class="caption">Met Gala, 2023</div>
+                <div class="gallery-section__caption">Met Gala, 2023</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-section__item">
                 <img src="images/rc-peoples-choice-2021.jpg" alt="People's Choice Awards 2021">
-                <div class="caption">People's Choice Awards, 2021</div>
+                <div class="gallery-section__caption">People's Choice Awards, 2021</div>
             </div>
         </div>
     </div>
 
     <div class="gallery-section">
-        <div class="gallery-section-title">Кінофестивалі</div>
-        <div class="gallery-grid">
-            <div class="gallery-item featured">
+        <div class="gallery-section__title">Кінофестивалі</div>
+        <div class="gallery-section__grid">
+            <div class="gallery-section__item gallery-section__item--featured">
                 <img src="images/fest-berlinale-2023.jpg" alt="Berlinale 2023">
-                <div class="caption">Berlinale — Reality, 2023</div>
+                <div class="gallery-section__caption">Berlinale — Reality, 2023</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-section__item">
                 <img src="images/fest-tiff-2024.jpg" alt="Toronto Film Festival 2024">
-                <div class="caption">Toronto International Film Festival, 2024</div>
+                <div class="gallery-section__caption">Toronto International Film Festival, 2024</div>
             </div>
-            <div class="gallery-item wide">
+            <div class="gallery-section__item gallery-section__item--wide">
                 <img src="images/fest-sxsw-2024.jpg" alt="SXSW 2024">
-                <div class="caption">SXSW — Immaculate, 2024</div>
+                <div class="gallery-section__caption">SXSW — Immaculate, 2024</div>
             </div>
         </div>
     </div>
 
     <div class="gallery-section">
-        <div class="gallery-section-title">Фільми та серіали</div>
-        <div class="gallery-grid">
-            <div class="gallery-item featured">
+        <div class="gallery-section__title">Фільми та серіали</div>
+        <div class="gallery-section__grid">
+            <div class="gallery-section__item gallery-section__item--featured">
                 <img src="images/film-euphoria-cassie.jpg" alt="Euphoria Cassie Howard">
-                <div class="caption">Euphoria — Cassie Howard (HBO)</div>
+                <div class="gallery-section__caption">Euphoria — Cassie Howard (HBO)</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-section__item">
                 <img src="images/film-euphoria-promo.jpg" alt="Euphoria promo">
-                <div class="caption">Euphoria — промо HBO</div>
+                <div class="gallery-section__caption">Euphoria — промо HBO</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-section__item">
                 <img src="images/film-white-lotus.jpg" alt="The White Lotus">
-                <div class="caption">The White Lotus — HBO</div>
+                <div class="gallery-section__caption">The White Lotus — HBO</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-section__item">
                 <img src="images/film-anyone-but-you.jpg" alt="Anyone But You">
-                <div class="caption">Anyone But You (2024)</div>
+                <div class="gallery-section__caption">Anyone But You (2024)</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-section__item">
                 <img src="images/film-immaculate.jpg" alt="Immaculate">
-                <div class="caption">Immaculate (2024)</div>
+                <div class="gallery-section__caption">Immaculate (2024)</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-section__item">
                 <img src="images/film-madame-web.jpg" alt="Madame Web">
-                <div class="caption">Madame Web (2024)</div>
+                <div class="gallery-section__caption">Madame Web (2024)</div>
             </div>
-            <div class="gallery-item featured">
+            <div class="gallery-section__item gallery-section__item--featured">
                 <img src="images/film-reality-2023.jpg" alt="Reality 2023">
-                <div class="caption">Reality (2023)</div>
+                <div class="gallery-section__caption">Reality (2023)</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-section__item">
                 <img src="images/film-white-lotus.jpg" alt="The White Lotus">
-                <div class="caption">The White Lotus — HBO</div>
+                <div class="gallery-section__caption">The White Lotus — HBO</div>
             </div>
         </div>
     </div>
 
     <div class="gallery-section">
-        <div class="gallery-section-title">Промо та журнали</div>
-        <div class="gallery-grid">
-            <div class="gallery-item">
+        <div class="gallery-section__title">Промо та журнали</div>
+        <div class="gallery-section__grid">
+            <div class="gallery-section__item">
                 <img src="images/promo-armani.jpg" alt="Armani Beauty">
-                <div class="caption">Armani Beauty, 2023</div>
+                <div class="gallery-section__caption">Armani Beauty, 2023</div>
             </div>
-            <div class="gallery-item featured">
+            <div class="gallery-section__item gallery-section__item--featured">
                 <img src="images/promo-miu-miu.jpg" alt="Miu Miu">
-                <div class="caption">Miu Miu Campaign</div>
+                <div class="gallery-section__caption">Miu Miu Campaign</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-section__item">
                 <img src="images/promo-gq.jpg" alt="GQ Magazine">
-                <div class="caption">GQ Magazine, 2022</div>
+                <div class="gallery-section__caption">GQ Magazine, 2022</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-section__item">
                 <img src="images/promo-elle.jpg" alt="Elle Magazine">
-                <div class="caption">Elle Magazine, 2024</div>
+                <div class="gallery-section__caption">Elle Magazine, 2024</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-section__item">
                 <img src="images/promo-rolling-stones.jpg" alt="Rolling Stones Angry">
-                <div class="caption">Rolling Stones — Angry (2023)</div>
+                <div class="gallery-section__caption">Rolling Stones — Angry (2023)</div>
             </div>
         </div>
     </div>
@@ -157,16 +170,18 @@
     <p>Sydney Sweeney Fan Site</p>
 </footer>
 
+<div class="fixed-badge" title="До гори сторінки" onclick="window.scrollTo({top:0,behavior:'smooth'})">✦</div>
+
 <script>
     function openLightbox(src, caption) {
         document.getElementById('lb-img').src = src;
         document.getElementById('lb-caption').textContent = caption;
-        document.getElementById('lightbox').classList.add('active');
+        document.getElementById('lightbox').classList.add('lightbox--active');
         document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
-        document.getElementById('lightbox').classList.remove('active');
+        document.getElementById('lightbox').classList.remove('lightbox--active');
         document.getElementById('lb-img').src = '';
         document.body.style.overflow = '';
     }
@@ -176,11 +191,11 @@
     });
 
     document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.gallery-item').forEach(function(item) {
+        document.querySelectorAll('.gallery-section__item').forEach(function(item) {
             item.addEventListener('click', function(e) {
                 e.stopPropagation();
-                var img = this.querySelector('img');
-                var cap = this.querySelector('.caption');
+                let img = this.querySelector('img');
+                let cap = this.querySelector('.gallery-section__caption');
                 openLightbox(img.src, cap ? cap.textContent.trim() : '');
             });
         });
