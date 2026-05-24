@@ -140,11 +140,113 @@
         </div>
     </section>
 
+    <section id="faq">
+        <h3>Запитання та відповіді</h3>
+        <div class="accordion">
+
+            <div class="accordion__item">
+                <input type="checkbox" id="faq-1" class="accordion__toggle">
+                <label for="faq-1" class="accordion__header">
+                    Як Sydney Sweeney розпочала кар'єру?
+                    <i class="accordion__icon">+</i>
+                </label>
+                <div class="accordion__body">
+                    <p>Sydney почала зніматись у дитинстві — перші ролі з'явились у 2009 році. Щоб переконати батьків дозволити їй акторську кар'єру, вона підготувала бізнес-план у 12 років. Перші роки були присвячені невеликим ролям у серіалах і незалежних фільмах.</p>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <input type="checkbox" id="faq-2" class="accordion__toggle">
+                <label for="faq-2" class="accordion__header">
+                    Яка роль стала переломною в її кар'єрі?
+                    <i class="accordion__icon">+</i>
+                </label>
+                <div class="accordion__body">
+                    <p>Переломною стала роль Кессі Говард у серіалі «Єфорія» (HBO, 2019). Завдяки цій роботі Sydney отримала дві номінації на Emmy Award і стала однією з найбільш обговорюваних акторок свого покоління. Паралельно роль Олівії у «Білому лотосі» (2021) зміцнила її репутацію серйозної драматичної акторки.</p>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <input type="checkbox" id="faq-3" class="accordion__toggle">
+                <label for="faq-3" class="accordion__header">
+                    Чому Sydney заснувала власну продюсерську компанію?
+                    <i class="accordion__icon">+</i>
+                </label>
+                <div class="accordion__body">
+                    <p>У 2020 році Sydney заснувала Fifty-Fifty Films, прагнучи самостійно обирати проєкти та розповідати жіночі історії. «Я хочу мати контроль над своєю кар'єрою», — пояснює вона. Компанія вже продюсувала «Immaculate» (2024), де Sydney одночасно зіграла головну роль.</p>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <input type="checkbox" id="faq-4" class="accordion__toggle">
+                <label for="faq-4" class="accordion__header">
+                    Які плани Sydney Sweeney на майбутнє?
+                    <i class="accordion__icon">+</i>
+                </label>
+                <div class="accordion__body">
+                    <p>Sydney активно розширює свою присутність у Голлівуді як акторка та продюсер. Вона продовжує шукати різноманітні ролі — від романтичних комедій до горорів та драм. Також розвивається її бізнес-напрямок: компанія Fifty-Fifty Films готує нові проєкти.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="premieres">
+        <h3>Прем'єри та події</h3>
+        <p>Календар виходів проєктів Sydney Sweeney. Поточний день підсвічено:</p>
+        <div style="display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;margin:.8rem 0 1rem;">
+            <select id="cal-month" style="border:1.5px solid #e8d5c4;border-radius:6px;padding:.4rem .7rem;font-family:inherit;font-size:.9rem;">
+                <option value="1">Січень</option><option value="2">Лютий</option><option value="3">Березень</option>
+                <option value="4">Квітень</option><option value="5">Травень</option><option value="6">Червень</option>
+                <option value="7">Липень</option><option value="8">Серпень</option><option value="9">Вересень</option>
+                <option value="10">Жовтень</option><option value="11">Листопад</option><option value="12">Грудень</option>
+            </select>
+            <input id="cal-year" type="number" value="2026" min="2020" max="2030" style="border:1.5px solid #e8d5c4;border-radius:6px;padding:.4rem .7rem;font-family:inherit;font-size:.9rem;width:82px">
+            <button class="btn" onclick="showCalendar()">Показати</button>
+        </div>
+        <div id="cal-output" style="overflow-x:auto;"></div>
+    </section>
+
 </main>
 
 <footer>
     <p>Sydney Sweeney Fan Site</p>
 </footer>
+
+<div class="fixed-badge" title="До гори сторінки" onclick="window.scrollTo({top:0,behavior:'smooth'})">✦</div>
+
+<script>
+(function() {
+    var now = new Date();
+    document.getElementById('cal-month').value = now.getMonth() + 1;
+    document.getElementById('cal-year').value = now.getFullYear();
+    showCalendar();
+}());
+
+function showCalendar() {
+    var month = parseInt(document.getElementById('cal-month').value);
+    var year = parseInt(document.getElementById('cal-year').value);
+    var firstDay = new Date(year, month - 1, 1).getDay();
+    firstDay = firstDay === 0 ? 6 : firstDay - 1;
+    var daysInMonth = new Date(year, month, 0).getDate();
+    var today = new Date();
+    var dayNames = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];
+    var html = '<table class="facts__table" style="min-width:280px"><thead><tr>';
+    for (var d = 0; d < 7; d++) html += '<th>' + dayNames[d] + '</th>';
+    html += '</tr></thead><tbody><tr>';
+    for (var e = 0; e < firstDay; e++) html += '<td></td>';
+    var col = firstDay;
+    for (var day = 1; day <= daysInMonth; day++) {
+        if (col === 7) { html += '</tr><tr>'; col = 0; }
+        var isToday = day === today.getDate() && month - 1 === today.getMonth() && year === today.getFullYear();
+        html += '<td' + (isToday ? ' style="background:var(--rose);color:#fff;border-radius:4px;font-weight:700"' : '') + '>' + day + '</td>';
+        col++;
+    }
+    while (col > 0 && col < 7) { html += '<td></td>'; col++; }
+    html += '</tr></tbody></table>';
+    document.getElementById('cal-output').innerHTML = html;
+}
+</script>
 
 </body>
 </html>

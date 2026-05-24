@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цікаве — Sydney Sweeney Fan Site</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .extras-hero {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: center;
+            background: #fff;
+            border-radius: 10px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,.06);
+            margin-bottom: 3rem;
+            overflow: hidden;
+            position: relative;
+        }
+        .extras-hero__text h2 { margin-bottom: .5rem; }
+        .extras-hero__spiral {
+            opacity: .25;
+            flex-shrink: 0;
+        }
+        @media (max-width: 600px) {
+            .extras-hero { grid-template-columns: 1fr; }
+            .extras-hero__spiral { display: none; }
+        }
+
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .hobby-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,.07);
+            transition: box-shadow .3s;
+        }
+        .hobby-card:hover { box-shadow: 0 6px 24px rgba(196,104,122,.2); }
+        .hobby-card__img {
+            height: 200px;
+            overflow: hidden;
+        }
+        .hobby-card__img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform .4s ease, filter .4s ease;
+            filter: saturate(.9);
+        }
+        .hobby-card:hover .hobby-card__img img {
+            transform: scale(1.06);
+            filter: saturate(1.5);
+        }
+        .hobby-card__body { padding: 1.2rem; }
+        .hobby-card__title { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: .4rem; }
+
+        @media (max-width: 768px) {
+            .hobbies-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .hobbies-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Іконічні фото */
+        .iconic-grid {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <h1>Sydney Sweeney</h1>
+        <p class="header__subtitle">Official Fan Site</p>
+    </div>
+    <nav>
+        <input type="checkbox" id="nav-toggle" class="nav__toggle">
+        <label for="nav-toggle" class="nav__burger" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </label>
+        <ul class="nav__list">
+            <li class="nav__item"><a href="index.html" class="nav__link">Головна</a></li>
+            <li class="nav__item nav__item--dropdown">
+                <a href="career.html" class="nav__link">Кар'єра ▾</a>
+                <ul class="nav__dropdown">
+                    <li><a href="career.html#filmography">Фільмографія</a></li>
+                    <li><a href="career.html#awards">Нагороди</a></li>
+                    <li><a href="career.html#roles">Найзначніші ролі</a></li>
+                </ul>
+            </li>
+            <li class="nav__item"><a href="gallery.html" class="nav__link">Галерея</a></li>
+            <li class="nav__item"><a href="layout.html" class="nav__link">Хронологія</a></li>
+            <li class="nav__item"><a href="extras.html" class="nav__link nav__link--active">Цікаве</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <nav aria-label="Хлібні крихти">
+        <ol class="breadcrumbs">
+            <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">Головна</a></li>
+            <li class="breadcrumbs__item breadcrumbs__item--current" aria-current="page">Цікаве</li>
+        </ol>
+    </nav>
+    <div class="extras-hero">
+        <div class="extras-hero__text">
+            <h2>Sydney поза кадром</h2>
+            <p>Більшість знає Sydney Sweeney як акторку. Але за межами знімального майданчика вона пілот, боксер, гонщик і підприємець. Ця сторінка — про іншу Sydney.</p>
+            <button class="btn btn--outline" onclick="toggleRoaming()" id="roaming-btn" style="margin-top:1rem;font-size:.82rem;">✦ Easter egg</button>
+        </div>
+        <div class="extras-hero__spiral" aria-hidden="true">
+            <div class="spiral" style="width:200px; height:200px;">
+                <i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i></i>
+            </div>
+        </div>
+    </div>
+    <section id="hobbies">
+        <h3>Захоплення</h3>
+        <div class="hobbies-grid">
+
+            <div class="hobby-card">
+                <div class="hobby-card__img">
+                    <img src="images/promo-armani.jpg" alt="Sydney Sweeney — Мода">
+                </div>
+                <div class="hobby-card__body">
+                    <div class="hobby-card__title">✈️ Авіація</div>
+                    <p>Sydney має ліцензію приватного пілота і керує власним літаком. Льотне мистецтво вона сприймає як метафору свободи та контролю над власним життям.</p>
+                </div>
+            </div>
+
+            <div class="hobby-card">
+                <div class="hobby-card__img">
+                    <img src="images/promo-gq.jpg" alt="Sydney Sweeney — Спорт">
+                </div>
+                <div class="hobby-card__body">
+                    <div class="hobby-card__title">🥊 Бокс</div>
+                    <p>Регулярні тренування з боксу — частина способу життя Sydney. Це не лише фізична форма, а й ментальна дисципліна, яку вона цінує не менше за акторське ремесло.</p>
+                </div>
+            </div>
+
+            <div class="hobby-card">
+                <div class="hobby-card__img">
+                    <img src="images/promo-elle.jpg" alt="Sydney Sweeney — Мода">
+                </div>
+                <div class="hobby-card__body">
+                    <div class="hobby-card__title">🏎️ Автоперегони</div>
+                    <p>Sydney — фанатка NASCAR і автомобільних перегонів. Вона регулярно відвідує змагання і не приховує своєї пристрасті до швидкості.</p>
+                </div>
+            </div>
+
+            <div class="hobby-card">
+                <div class="hobby-card__img">
+                    <img src="images/promo-miu-miu.jpg" alt="Sydney Sweeney — Бізнес">
+                </div>
+                <div class="hobby-card__body">
+                    <div class="hobby-card__title">💼 Підприємництво</div>
+                    <p>Компанія Fifty-Fifty Films, заснована у 2020 році, — це не просто бізнес. Це спосіб Sydney розповідати жіночі історії та мати голос у Hollywood.</p>
+                </div>
+            </div>
+
+            <div class="hobby-card">
+                <div class="hobby-card__img">
+                    <img src="images/promo-rolling-stones.jpg" alt="Sydney Sweeney — Музика">
+                </div>
+                <div class="hobby-card__body">
+                    <div class="hobby-card__title">🎵 Музика та кіно</div>
+                    <p>Sydney знялась у кліпі Rolling Stones «Angry» (2023). Вона відкрита до нових форматів творчості та не обмежує себе рамками одного жанру.</p>
+                </div>
+            </div>
+
+            <div class="hobby-card">
+                <div class="hobby-card__img">
+                    <img src="images/rc-met-gala-2023.jpg" alt="Sydney Sweeney — Мода">
+                </div>
+                <div class="hobby-card__body">
+                    <div class="hobby-card__title">👗 Висока мода</div>
+                    <p>Обличчя Armani Beauty та амбасадор Miu Miu — Sydney є одним із найпомітніших імен у світі fashion. Її образи на червоній доріжці обговорює весь Інтернет.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="palette">
+        <h3>Палітра образів</h3>
+        <p>Sydney — майстер перевтілення. Кожен образ — своя кольорова гама. Вибери стиль:</p>
+        <div style="display:flex;gap:2rem;align-items:center;flex-wrap:wrap;margin-top:1rem;">
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem;">
+                <li onclick="setPalette('#c4687a')" style="padding:.45rem 1.1rem;background:#f5dde2;color:#8b3a4a;border-radius:6px;cursor:pointer;font-weight:600;border:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='#c4687a'" onmouseout="this.style.borderColor='transparent'">Rose — Euphoria</li>
+                <li onclick="setPalette('#c8905a')" style="padding:.45rem 1.1rem;background:#f5e6d3;color:#7a4a1a;border-radius:6px;cursor:pointer;font-weight:600;border:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='#c8905a'" onmouseout="this.style.borderColor='transparent'">Gold — White Lotus</li>
+                <li onclick="setPalette('#2c1810')" style="padding:.45rem 1.1rem;background:#3d2418;color:#fdf8f3;border-radius:6px;cursor:pointer;font-weight:600;border:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='#888'" onmouseout="this.style.borderColor='transparent'">Noir — Immaculate</li>
+                <li onclick="setPalette('#e8c8d0')" style="padding:.45rem 1.1rem;background:#fdf8f3;color:#8b3a4a;border-radius:6px;cursor:pointer;font-weight:600;border:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='#e8c8d0'" onmouseout="this.style.borderColor='transparent'">Blush — Armani</li>
+                <li onclick="setPalette('#7a9fbd')" style="padding:.45rem 1.1rem;background:#d8eaf5;color:#1a3d5a;border-radius:6px;cursor:pointer;font-weight:600;border:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='#7a9fbd'" onmouseout="this.style.borderColor='transparent'">Blue — Anyone But You</li>
+            </ul>
+            <div id="palette-preview" style="width:100px;height:100px;background:#c4687a;border-radius:50%;flex-shrink:0;transition:background .35s;box-shadow:0 4px 24px rgba(0,0,0,.15);"></div>
+        </div>
+    </section>
+
+    <section id="tribute">
+        <h3>Напиши трибут Sydney</h3>
+        <p>Вибери розмір тексту та напиши своє слово. <button class="btn btn--outline" onclick="readingMode()" style="font-size:.78rem;padding:.3rem .9rem;vertical-align:middle;">Аа Читацький режим</button></p>
+        <div style="display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;margin-top:.8rem;">
+            <input id="tribute-text" type="text" value="I ♥ Sydney!" style="border:1.5px solid #e8d5c4;border-radius:6px;padding:.5rem .8rem;font-family:inherit;font-size:.9rem;flex:1;min-width:160px">
+            <input id="tribute-size" type="range" min="14" max="80" value="36" oninput="document.getElementById('tribute-px').textContent=this.value+'px'" style="width:110px;accent-color:var(--rose)">
+            <span id="tribute-px" style="font-size:.85rem;color:var(--muted);min-width:36px">36px</span>
+            <button class="btn" onclick="showTribute(document.getElementById('tribute-text').value, document.getElementById('tribute-size').value)">Показати</button>
+            <button class="btn btn--outline" onclick="rainbowTribute()">🌈 Веселковий</button>
+        </div>
+        <div id="tribute-output" style="min-height:64px;margin-top:1rem;font-family:'Playfair Display',serif;text-align:center;word-break:break-word;"></div>
+    </section>
+
+    <section id="iconic">
+        <h3>Іконічні образи</h3>
+        <p>Деякі фотосесії та образи Sydney стали по-справжньому культовими:</p>
+        <div class="iconic-grid">
+            <div class="shadow-block">
+                <img src="images/rc-vanity-fair-2024.jpg" alt="Vanity Fair Oscar Party 2024">
+            </div>
+            <div class="shadow-block" style="box-shadow: 12px 12px 0 var(--gold), 20px 20px 40px rgba(44,24,16,.3);">
+                <img src="images/promo-miu-miu.jpg" alt="Miu Miu Campaign">
+            </div>
+            <div class="shadow-block" style="box-shadow: 12px 12px 0 var(--dark), 20px 20px 40px rgba(44,24,16,.3);">
+                <img src="images/fest-berlinale-2023.jpg" alt="Berlinale 2023">
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Sydney Sweeney Fan Site</p>
+</footer>
+
+<div class="fixed-badge" title="До гори сторінки" onclick="window.scrollTo({top:0,behavior:'smooth'})">✦</div>
+
+<img id="roaming-sydney" src="images/rc-vanity-fair-2024.jpg" alt="" style="position:fixed;width:64px;height:64px;border-radius:50%;border:3px solid var(--rose);object-fit:cover;display:none;z-index:9998;pointer-events:none;top:120px;left:120px;transition:top .7s ease,left .7s ease;">
+
+<script>
+function setPalette(color) {
+    document.getElementById('palette-preview').style.background = color;
+}
+
+function showTribute(text, size) {
+    var out = document.getElementById('tribute-output');
+    out.textContent = text;
+    out.style.fontSize = size + 'px';
+}
+
+function rainbowTribute() {
+    var text = document.getElementById('tribute-text').value;
+    var size = document.getElementById('tribute-size').value;
+    var colors = ['#c4687a', '#c8905a', '#e8a060', '#8b4d6e', '#7a9fbd', '#6aaa8a'];
+    var out = document.getElementById('tribute-output');
+    out.style.fontSize = '';
+    out.innerHTML = text.split('').map(function(ch, i) {
+        return '<span style="color:' + colors[i % colors.length] + ';font-size:' + size + 'px">' + ch + '</span>';
+    }).join('');
+}
+
+function readingMode() {
+    var paras = document.getElementsByTagName('p');
+    for (var i = 0; i < paras.length; i++) {
+        paras[i].setAttribute('style', 'font-size:15px');
+    }
+}
+
+var roamingInterval = null;
+function toggleRoaming() {
+    var img = document.getElementById('roaming-sydney');
+    var btn = document.getElementById('roaming-btn');
+    if (roamingInterval) {
+        clearInterval(roamingInterval);
+        roamingInterval = null;
+        img.style.display = 'none';
+        btn.textContent = '✦ Easter egg';
+    } else {
+        img.style.display = 'block';
+        btn.textContent = '✦ Зупинити';
+        roamingInterval = setInterval(function() {
+            img.style.top = Math.floor(Math.random() * (window.innerHeight - 80)) + 'px';
+            img.style.left = Math.floor(Math.random() * (window.innerWidth - 80)) + 'px';
+        }, 1000);
+    }
+}
+</script>
+
+</body>
+</html>

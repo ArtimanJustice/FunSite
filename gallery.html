@@ -189,7 +189,17 @@
             if (e.target === this || e.target.id === 'lb-img') closeLightbox();
         });
     });
+    document.querySelector('main').addEventListener('mousemove', function(e) {
+        var el = document.getElementById('cursor-pos');
+        el.style.opacity = '1';
+        el.textContent = 'x ' + e.clientX + ' y ' + e.clientY;
+    });
+    document.querySelector('main').addEventListener('mouseleave', function() {
+        document.getElementById('cursor-pos').style.opacity = '0';
+    });
 </script>
+
+<div id="cursor-pos" style="position:fixed;bottom:1.2rem;right:6rem;background:rgba(44,24,16,.85);color:#fdf8f3;padding:.3rem .9rem;border-radius:20px;font-size:.72rem;font-family:monospace;pointer-events:none;opacity:0;transition:opacity .25s;z-index:50;"></div>
 
 </body>
 </html>

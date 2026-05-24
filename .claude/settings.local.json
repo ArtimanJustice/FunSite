@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip show *)",
+      "Bash(where msedge *)",
+      "Bash(where wkhtmltopdf *)",
+      "PowerShell(npm list *)",
+      "PowerShell(& \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\" --headless --disable-gpu --print-to-pdf=\"C:\\\\Users\\\\Danylo\\\\Desktop\\\\lab2_guide.pdf\" --print-to-pdf-no-header \"C:\\\\Users\\\\Danylo\\\\Desktop\\\\lab2_guide_temp.html\" 2>&1; Start-Sleep -Seconds 5; ls \"C:\\\\Users\\\\Danylo\\\\Desktop\\\\lab2_guide.pdf\" -ErrorAction SilentlyContinue)"
+    ]
+  }
+}
