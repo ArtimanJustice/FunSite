@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кар'єра — Sydney Sweeney Fan Site</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lab3/block1/05-fade-out-banner.css">
+    <link rel="stylesheet" href="lab3/block3/09-countdown-timer.css">
 </head>
 <body>
 
@@ -230,43 +232,9 @@
 
 <div class="fixed-badge" title="До гори сторінки" onclick="window.scrollTo({top:0,behavior:'smooth'})">✦</div>
 
-<script>
-function closeBanner() {
-    var banner = document.getElementById('promo-banner');
-    var opacity = 1;
-    var t = setInterval(function() {
-        opacity -= 0.06;
-        banner.style.opacity = Math.max(0, opacity);
-        if (opacity <= 0) { clearInterval(t); banner.style.display = 'none'; }
-    }, 30);
-}
-
-(function tickBirthday() {
-    var now = new Date();
-    var next = new Date(now.getFullYear(), 8, 12);
-    if (now >= next) next.setFullYear(next.getFullYear() + 1);
-    var diff = next - now;
-    var d = Math.floor(diff / 86400000);
-    var h = Math.floor(diff % 86400000 / 3600000);
-    var m = Math.floor(diff % 3600000 / 60000);
-    var s = Math.floor(diff % 60000 / 1000);
-    document.getElementById('birthday-counter').textContent =
-        '🎂 До дня народження: ' + d + 'д ' + h + 'год ' + m + 'хв ' + s + 'с';
-    setTimeout(tickBirthday, 1000);
-}());
-
-document.querySelector('#contact form').addEventListener('submit', function(e) {
-    var val = document.getElementById('f-fan-id').value.trim();
-    if (val) {
-        var result = val.match(/^\d{4}-\d{4}-\d{4}-\d{4}$/);
-        if (!result) {
-            e.preventDefault();
-            document.getElementById('f-fan-id').style.outline = '2px solid var(--rose)';
-            document.getElementById('f-fan-id').focus();
-        }
-    }
-});
-</script>
+<script src="lab3/block1/05-fade-out-banner.js"></script>
+<script src="lab3/block3/09-countdown-timer.js"></script>
+<script src="lab3/block3/04-credit-card-regex.js"></script>
 
 </body>
 </html>

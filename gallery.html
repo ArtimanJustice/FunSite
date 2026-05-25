@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кар'єра — Sydney Sweeney Fan Site</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lab3/block2/04-cursor-coordinates.css">
 </head>
 <body>
 
@@ -591,17 +592,10 @@
             if (e.target === this || e.target.id === 'lb-img') closeLightbox();
         });
     });
-    document.querySelector('main').addEventListener('mousemove', function(e) {
-        var el = document.getElementById('cursor-pos');
-        el.style.opacity = '1';
-        el.textContent = 'x ' + e.clientX + ' y ' + e.clientY;
-    });
-    document.querySelector('main').addEventListener('mouseleave', function() {
-        document.getElementById('cursor-pos').style.opacity = '0';
-    });
 </script>
 
 <div id="cursor-pos"></div>
+<script src="lab3/block2/04-cursor-coordinates.js"></script>
 
 </body>
 </html>

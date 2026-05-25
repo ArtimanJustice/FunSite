@@ -1,0 +1,50 @@
+.tribute-controls {
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    padding: 1.2rem;
+    background: var(--paper);
+    border-left: 3px solid var(--gold);
+    border-radius: 2px;
+}
+
+.tribute-controls input[type="text"] {
+    border: 1.5px solid var(--hairline);
+    border-radius: 2px;
+    padding: .55rem .9rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    flex: 1;
+    min-width: 180px;
+    background: #fff;
+    transition: border-color .25s;
+}
+
+.tribute-controls input[type="text"]:focus {
+    outline: none;
+    border-color: var(--rose);
+}
+
+.tribute-controls input[type="range"] {
+    width: 120px;
+    accent-color: var(--rose);
+}
+
+.tribute-controls .px-label {
+    font-size: .8rem;
+    color: var(--muted);
+    min-width: 40px;
+    font-family: 'Playfair Display', serif;
+    font-variant-numeric: tabular-nums;
+}
+
+.tribute-output {
+    min-height: 80px;
+    margin-top: 1.4rem;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    word-break: break-word;
+    padding: 1rem;
+}

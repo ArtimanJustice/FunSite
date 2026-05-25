@@ -1,0 +1,19 @@
+#cursor-pos {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 6rem;
+    background: var(--ink) !important;
+    color: var(--gold-light) !important;
+    padding: .35rem 1rem !important;
+    border-radius: 0 !important;
+    font-size: .7rem !important;
+    font-family: 'Playfair Display', serif !important;
+    font-style: italic;
+    letter-spacing: 2px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: 60;
+    border: 1px solid var(--gold);
+    text-transform: uppercase;
+}

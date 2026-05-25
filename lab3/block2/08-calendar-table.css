@@ -1,0 +1,73 @@
+.calendar-controls {
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1rem 0 1.5rem;
+    padding: 1.2rem;
+    background: var(--paper);
+    border-left: 3px solid var(--rose);
+    border-radius: 2px;
+}
+
+.cal-input {
+    border: 1.5px solid var(--hairline);
+    border-radius: 2px;
+    padding: .5rem .85rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: .9rem;
+    background: #fff;
+    color: var(--ink);
+    transition: border-color .25s;
+}
+
+.cal-input:focus {
+    outline: none;
+    border-color: var(--rose);
+}
+
+.cal-input--year {
+    width: 92px;
+    font-family: 'Playfair Display', serif;
+    font-variant-numeric: tabular-nums;
+}
+
+.cal-output {
+    overflow-x: auto;
+}
+
+.facts__table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--paper);
+    font-family: 'Playfair Display', serif;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 1px 0 var(--hairline);
+}
+
+.facts__table th {
+    background: var(--wine);
+    color: var(--cream);
+    padding: .6rem .4rem;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+}
+
+.facts__table td {
+    padding: .75rem .4rem;
+    text-align: center;
+    border: 1px solid var(--hairline-soft);
+    font-size: 1.05rem;
+    color: var(--ink);
+    transition: background .2s, transform .2s;
+}
+
+.facts__table tbody tr:hover td {
+    background: #fdf0f2;
+}

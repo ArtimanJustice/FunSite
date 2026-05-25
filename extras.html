@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Цікаве — Sydney Sweeney Fan Site</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lab3/block1/01-font-size-function.css">
+    <link rel="stylesheet" href="lab3/block1/02-roaming-image.css">
+    <link rel="stylesheet" href="lab3/block2/03-color-palette.css">
 </head>
 <body>
 
@@ -172,54 +175,11 @@
 
 <img id="roaming-sydney" src="images/Vanity Fair Oscar Party 2024/1.jpg" alt="" style="top:120px;left:120px;">
 
-<script>
-function setPalette(color) {
-    document.getElementById('palette-preview').style.background = color;
-}
-
-function showTribute(text, size) {
-    var out = document.getElementById('tribute-output');
-    out.textContent = text;
-    out.style.fontSize = size + 'px';
-}
-
-function rainbowTribute() {
-    var text = document.getElementById('tribute-text').value;
-    var size = document.getElementById('tribute-size').value;
-    var colors = ['#c4687a', '#c8905a', '#e8a060', '#8b4d6e', '#7a9fbd', '#6aaa8a'];
-    var out = document.getElementById('tribute-output');
-    out.style.fontSize = '';
-    out.innerHTML = text.split('').map(function(ch, i) {
-        return '<span style="color:' + colors[i % colors.length] + ';font-size:' + size + 'px">' + ch + '</span>';
-    }).join('');
-}
-
-function readingMode() {
-    var paras = document.getElementsByTagName('p');
-    for (var i = 0; i < paras.length; i++) {
-        paras[i].setAttribute('style', 'font-size:15px');
-    }
-}
-
-var roamingInterval = null;
-function toggleRoaming() {
-    var img = document.getElementById('roaming-sydney');
-    var btn = document.getElementById('roaming-btn');
-    if (roamingInterval) {
-        clearInterval(roamingInterval);
-        roamingInterval = null;
-        img.style.display = 'none';
-        btn.textContent = '✦ Easter egg';
-    } else {
-        img.style.display = 'block';
-        btn.textContent = '✦ Зупинити';
-        roamingInterval = setInterval(function() {
-            img.style.top = Math.floor(Math.random() * (window.innerHeight - 80)) + 'px';
-            img.style.left = Math.floor(Math.random() * (window.innerWidth - 80)) + 'px';
-        }, 1000);
-    }
-}
-</script>
+<script src="lab3/block2/03-color-palette.js"></script>
+<script src="lab3/block1/01-font-size-function.js"></script>
+<script src="lab3/block2/06-rainbow-letters.js"></script>
+<script src="lab3/block1/03-reading-mode.js"></script>
+<script src="lab3/block1/02-roaming-image.js"></script>
 
 </body>
 </html>

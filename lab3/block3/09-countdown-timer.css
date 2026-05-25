@@ -1,0 +1,11 @@
+#birthday-counter {
+    margin-top: 1.2rem !important;
+    font-size: .82rem !important;
+    color: var(--muted) !important;
+    font-family: 'Playfair Display', serif !important;
+    font-style: italic;
+    letter-spacing: .5px;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--hairline);
+    font-variant-numeric: tabular-nums;
+}

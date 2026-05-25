@@ -1,0 +1,17 @@
+#roaming-sydney {
+    position: fixed;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 3px solid var(--gold) !important;
+    object-fit: cover;
+    display: none;
+    z-index: 9998;
+    pointer-events: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+    transition: top .9s ease, left .9s ease;
+}
+
+.easter-egg {
+    margin-top: 1.2rem;
+}
