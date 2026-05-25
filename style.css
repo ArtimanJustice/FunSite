@@ -1799,6 +1799,14 @@ article {
     gap: 10px;
 }
 
+.film-archive__stills--single {
+    grid-template-columns: minmax(280px, 420px);
+}
+
+.film-archive__stills--single .film-archive__still {
+    height: 280px;
+}
+
 .film-archive__still {
     height: 220px;
     overflow: hidden;
