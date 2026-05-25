@@ -1,8 +1,8 @@
-var roamingInterval = null;
+let roamingInterval = null;
 
 function toggleRoaming() {
-    var img = document.getElementById('roaming-sydney');
-    var btn = document.getElementById('roaming-btn');
+    const img = document.getElementById('roaming-sydney');
+    const btn = document.getElementById('roaming-btn');
     if (roamingInterval) {
         clearInterval(roamingInterval);
         roamingInterval = null;
