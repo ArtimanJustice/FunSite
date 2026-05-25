@@ -196,17 +196,17 @@
     <section id="premieres">
         <h3>Прем'єри та події</h3>
         <p>Календар виходів проєктів Sydney Sweeney. Поточний день підсвічено:</p>
-        <div style="display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;margin:.8rem 0 1rem;">
-            <select id="cal-month" style="border:1.5px solid #e8d5c4;border-radius:6px;padding:.4rem .7rem;font-family:inherit;font-size:.9rem;">
+        <div class="calendar-controls">
+            <select id="cal-month" class="cal-input">
                 <option value="1">Січень</option><option value="2">Лютий</option><option value="3">Березень</option>
                 <option value="4">Квітень</option><option value="5">Травень</option><option value="6">Червень</option>
                 <option value="7">Липень</option><option value="8">Серпень</option><option value="9">Вересень</option>
                 <option value="10">Жовтень</option><option value="11">Листопад</option><option value="12">Грудень</option>
             </select>
-            <input id="cal-year" type="number" value="2026" min="2020" max="2030" style="border:1.5px solid #e8d5c4;border-radius:6px;padding:.4rem .7rem;font-family:inherit;font-size:.9rem;width:82px">
+            <input id="cal-year" type="number" value="2026" min="2020" max="2030" class="cal-input cal-input--year">
             <button class="btn" onclick="showCalendar()">Показати</button>
         </div>
-        <div id="cal-output" style="overflow-x:auto;"></div>
+        <div id="cal-output" class="cal-output"></div>
     </section>
 
 </main>

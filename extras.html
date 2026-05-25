@@ -5,78 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Цікаве — Sydney Sweeney Fan Site</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .extras-hero {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 2rem;
-            align-items: center;
-            background: #fff;
-            border-radius: 10px;
-            padding: 2.5rem 2rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,.06);
-            margin-bottom: 3rem;
-            overflow: hidden;
-            position: relative;
-        }
-        .extras-hero__text h2 { margin-bottom: .5rem; }
-        .extras-hero__spiral {
-            opacity: .25;
-            flex-shrink: 0;
-        }
-        @media (max-width: 600px) {
-            .extras-hero { grid-template-columns: 1fr; }
-            .extras-hero__spiral { display: none; }
-        }
-
-        .hobbies-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-        .hobby-card {
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,.07);
-            transition: box-shadow .3s;
-        }
-        .hobby-card:hover { box-shadow: 0 6px 24px rgba(196,104,122,.2); }
-        .hobby-card__img {
-            height: 200px;
-            overflow: hidden;
-        }
-        .hobby-card__img img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            object-position: top;
-            transition: transform .4s ease, filter .4s ease;
-            filter: saturate(.9);
-        }
-        .hobby-card:hover .hobby-card__img img {
-            transform: scale(1.06);
-            filter: saturate(1.5);
-        }
-        .hobby-card__body { padding: 1.2rem; }
-        .hobby-card__title { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: .4rem; }
-
-        @media (max-width: 768px) {
-            .hobbies-grid { grid-template-columns: 1fr 1fr; }
-        }
-        @media (max-width: 480px) {
-            .hobbies-grid { grid-template-columns: 1fr; }
-        }
-
-        /* Іконічні фото */
-        .iconic-grid {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-    </style>
 </head>
 <body>
 
@@ -115,7 +43,7 @@
         <div class="extras-hero__text">
             <h2>Sydney поза кадром</h2>
             <p>Більшість знає Sydney Sweeney як акторку. Але за межами знімального майданчика вона пілот, боксер, гонщик і підприємець. Ця сторінка — про іншу Sydney.</p>
-            <button class="btn btn--outline" onclick="toggleRoaming()" id="roaming-btn" style="margin-top:1rem;font-size:.82rem;">✦ Easter egg</button>
+            <button class="btn btn--outline btn--small easter-egg" onclick="toggleRoaming()" id="roaming-btn">✦ Easter egg</button>
         </div>
         <div class="extras-hero__spiral" aria-hidden="true">
             <div class="spiral" style="width:200px; height:200px;">
@@ -193,29 +121,29 @@
     <section id="palette">
         <h3>Палітра образів</h3>
         <p>Sydney — майстер перевтілення. Кожен образ — своя кольорова гама. Вибери стиль:</p>
-        <div style="display:flex;gap:2rem;align-items:center;flex-wrap:wrap;margin-top:1rem;">
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem;">
-                <li onclick="setPalette('#c4687a')" style="padding:.45rem 1.1rem;background:#f5dde2;color:#8b3a4a;border-radius:6px;cursor:pointer;font-weight:600;border:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='#c4687a'" onmouseout="this.style.borderColor='transparent'">Rose — Euphoria</li>
-                <li onclick="setPalette('#c8905a')" style="padding:.45rem 1.1rem;background:#f5e6d3;color:#7a4a1a;border-radius:6px;cursor:pointer;font-weight:600;border:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='#c8905a'" onmouseout="this.style.borderColor='transparent'">Gold — White Lotus</li>
-                <li onclick="setPalette('#2c1810')" style="padding:.45rem 1.1rem;background:#3d2418;color:#fdf8f3;border-radius:6px;cursor:pointer;font-weight:600;border:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='#888'" onmouseout="this.style.borderColor='transparent'">Noir — Immaculate</li>
-                <li onclick="setPalette('#e8c8d0')" style="padding:.45rem 1.1rem;background:#fdf8f3;color:#8b3a4a;border-radius:6px;cursor:pointer;font-weight:600;border:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='#e8c8d0'" onmouseout="this.style.borderColor='transparent'">Blush — Armani</li>
-                <li onclick="setPalette('#7a9fbd')" style="padding:.45rem 1.1rem;background:#d8eaf5;color:#1a3d5a;border-radius:6px;cursor:pointer;font-weight:600;border:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='#7a9fbd'" onmouseout="this.style.borderColor='transparent'">Blue — Anyone But You</li>
+        <div class="palette-section">
+            <ul class="palette-list">
+                <li onclick="setPalette('#c4687a')" data-color="rose">Rose — Euphoria</li>
+                <li onclick="setPalette('#c8905a')" data-color="gold">Gold — White Lotus</li>
+                <li onclick="setPalette('#2c1810')" data-color="noir">Noir — Immaculate</li>
+                <li onclick="setPalette('#e8c8d0')" data-color="blush">Blush — Armani</li>
+                <li onclick="setPalette('#7a9fbd')" data-color="blue">Blue — Anyone But You</li>
             </ul>
-            <div id="palette-preview" style="width:100px;height:100px;background:#c4687a;border-radius:50%;flex-shrink:0;transition:background .35s;box-shadow:0 4px 24px rgba(0,0,0,.15);"></div>
+            <div id="palette-preview" class="palette-preview"></div>
         </div>
     </section>
 
     <section id="tribute">
         <h3>Напиши трибут Sydney</h3>
-        <p>Вибери розмір тексту та напиши своє слово. <button class="btn btn--outline" onclick="readingMode()" style="font-size:.78rem;padding:.3rem .9rem;vertical-align:middle;">Аа Читацький режим</button></p>
-        <div style="display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;margin-top:.8rem;">
-            <input id="tribute-text" type="text" value="I ♥ Sydney!" style="border:1.5px solid #e8d5c4;border-radius:6px;padding:.5rem .8rem;font-family:inherit;font-size:.9rem;flex:1;min-width:160px">
-            <input id="tribute-size" type="range" min="14" max="80" value="36" oninput="document.getElementById('tribute-px').textContent=this.value+'px'" style="width:110px;accent-color:var(--rose)">
-            <span id="tribute-px" style="font-size:.85rem;color:var(--muted);min-width:36px">36px</span>
+        <p>Вибери розмір тексту та напиши своє слово. <button class="btn btn--outline btn--small" onclick="readingMode()">Аа Читацький режим</button></p>
+        <div class="tribute-controls">
+            <input id="tribute-text" type="text" value="I ♥ Sydney!">
+            <input id="tribute-size" type="range" min="14" max="80" value="36" oninput="document.getElementById('tribute-px').textContent=this.value+'px'">
+            <span id="tribute-px" class="px-label">36px</span>
             <button class="btn" onclick="showTribute(document.getElementById('tribute-text').value, document.getElementById('tribute-size').value)">Показати</button>
             <button class="btn btn--outline" onclick="rainbowTribute()">🌈 Веселковий</button>
         </div>
-        <div id="tribute-output" style="min-height:64px;margin-top:1rem;font-family:'Playfair Display',serif;text-align:center;word-break:break-word;"></div>
+        <div id="tribute-output" class="tribute-output"></div>
     </section>
 
     <section id="iconic">
@@ -242,7 +170,7 @@
 
 <div class="fixed-badge" title="До гори сторінки" onclick="window.scrollTo({top:0,behavior:'smooth'})">✦</div>
 
-<img id="roaming-sydney" src="images/rc-vanity-fair-2024.jpg" alt="" style="position:fixed;width:64px;height:64px;border-radius:50%;border:3px solid var(--rose);object-fit:cover;display:none;z-index:9998;pointer-events:none;top:120px;left:120px;transition:top .7s ease,left .7s ease;">
+<img id="roaming-sydney" src="images/rc-vanity-fair-2024.jpg" alt="" style="top:120px;left:120px;">
 
 <script>
 function setPalette(color) {
